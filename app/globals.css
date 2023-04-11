@@ -48,13 +48,48 @@ body {
   text-transform: lowercase;
 }
 
+.container__main {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin-top: 3rem;
+}
+
 .add__task-container {
+  text-align: center;
+}
+
+.add__task-form {
+  width: 100%;
+  margin-top: 20px;
 }
 
 form {
-  display: grid;
-  grid-template-columns: auto;
-  grid-gap: 0.5rem 1rem;
-  justify-items: center;
-  position: relative;
+  display: flex;
+  flex-direction: column;
+  margin: 0 2rem;
+  gap: 1.5rem;
+}
+
+.form__input input {
+  width: 100%;
+  border: 0;
+  height: 50px;
+  font-size: 16px;
+  color: var(--primary-color);
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+.flat-button {
+  width: 30%;
+  font-size: 12px;
+  letter-spacing: 3px;
+  padding: 10px 12px;
+  border-radius: 8px;
+  background: var(--primary-color);
+  color: var(--bg-color);
+  text-transform: uppercase;
+  text-align: center;
+  margin-right: 10px;
+  border: none;
 }

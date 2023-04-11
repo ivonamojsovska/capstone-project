@@ -1,4 +1,3 @@
-"use client";
 import AddTask from "@/components/AddTask";
 
 function HomePage() {
