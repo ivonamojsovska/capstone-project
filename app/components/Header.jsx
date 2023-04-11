@@ -12,7 +12,8 @@ function Header() {
         <div className="logo">
           <h1 className={caveat.className}>Done Undone</h1>
           <p className="header__paragraph">
-            Orginize your day and spend the time wisely
+            "Let our advance worrying become advance thinking and planning." -
+            Winston Churchill
           </p>
         </div>
       </div>

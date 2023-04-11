@@ -1,11 +1,11 @@
 import "./globals.css";
-import Navbar from "@/components/Navbar";
-import Header from "@/components/Header";
+import Navbar from "@/app/components/Navbar";
+import Header from "@/app/components/Header";
 import { Poppins } from "next/font/google";
-import Footer from "@/components/Footer";
+import Footer from "@/app/components/Footer";
 
 const poppins = Poppins({
-  weight: ["400", "700"],
+  weight: ["200", "300", "400", "700"],
   subsets: ["latin"],
 });
 

@@ -1,8 +1,9 @@
 "use client";
+import { createTodo } from "../utils/actions";
 
 import { React, useState } from "react";
 
-const AddTask = () => {
+const AddTask = ({}) => {
   const [task, setTask] = useState({ title: null, time: null, place: null });
 
   const handleChange = (e) => {
@@ -13,7 +14,7 @@ const AddTask = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(task);
+    createTodo(task);
     e.target.reset();
   };
 
