@@ -1,9 +1,12 @@
-
+"use client";
+import AddTask from "@/components/AddTask";
 
 function HomePage() {
   return (
-    <div>HomePage</div>
-  )
+    <>
+      <AddTask />
+    </>
+  );
 }
 
-export default HomePage
+export default HomePage;

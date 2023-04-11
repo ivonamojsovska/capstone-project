@@ -25,12 +25,14 @@ body {
   height: 8rem;
   display: flex;
   justify-content: flex-end;
+  border-bottom: 1px solid var(--primary-color);
 }
 
 .navbar__list {
   list-style: none;
+  padding: 0 2rem;
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   gap: 3rem;
 }
 
@@ -44,4 +46,15 @@ body {
 .header__paragraph {
   font-size: 1.4rem;
   text-transform: lowercase;
+}
+
+.add__task-container {
+}
+
+form {
+  display: grid;
+  grid-template-columns: auto;
+  grid-gap: 0.5rem 1rem;
+  justify-items: center;
+  position: relative;
 }
