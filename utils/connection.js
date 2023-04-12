@@ -1,20 +1,28 @@
-import mongoose, { Schema, model, models } from "mongoose";
+//IMPORT MONGOOSE
+import mongoose, { Model } from "mongoose";
 
-const connect = async () => {
+// connection function
+export const connect = async () => {
+    //CREATE THE MONGOOSE CONNECTION
+    const conn = await mongoose
+        .connect(process.env.MONGO_URI)
+        .catch((err) => console.log(err));
 
-    const conn = await mongoose.connect(process.env.MONGO_URI).catch((err) => console.log(err));
+    // connection alerts
+    mongoose.connection
+        .on("open", () => console.log("connected to mongo"))
+        .on("error", (error) => console.log(error));
 
-    mongoose.connection.on("open", () => console.log("connected to mongo")).on("error", (error) => console.log(error));
-
-    const TodoSchema = new Schema({
-        title: String,
-        time: String,
+    // OUR Todo Schema
+    const TodoSchema = new mongoose.Schema({
+        name: String,
         place: String,
+        time: String,
     });
 
-    const Todo = models.Todo || model("Todo", TodoSchema);
+    // OUR TODO MODEL (we check that is doesn't already exist to avoid dev server issues)
+    const Todo = mongoose.models.Todo || mongoose.model("Todo", TodoSchema);
 
+    // return the connection and the Todo model
     return { conn, Todo };
 };
-
-export default connect
