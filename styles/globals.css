@@ -20,6 +20,16 @@ ul {
   list-style: none;
 }
 
+.delete-btn {
+  font-size: 1rem;
+  font-family: inherit;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 50%;
+  color: var(--primary-color);
+  background: var(--bg-color);
+}
+
 .link {
   text-decoration: none;
 }
@@ -68,6 +78,8 @@ ul {
 }
 
 .add__task-container {
+  width: 50%;
+  margin: 2rem auto;
   text-align: center;
 }
 
@@ -170,6 +182,7 @@ footer .link {
 .task__content {
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
 .task__content > * {

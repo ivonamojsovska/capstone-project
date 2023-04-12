@@ -26,13 +26,13 @@ const AddTask = () => {
     return (
         <>
             <div className="add__task-container">
-                <h3>Add Task</h3>
+                <h3>Let's add some tasks...</h3>
                 <div className="add__task-form">
                     <form onSubmit={handleSubmit}>
                         <div className="form__input">
                             <input
                                 type="text"
-                                name="title"
+                                name="name"
                                 placeholder="What you need to do?"
                                 required
                                 onChange={handleChange}

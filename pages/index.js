@@ -16,7 +16,7 @@ export default function Home({ todos }) {
 export async function getServerSideProps(ctx) {
   const todos = JSON.parse(JSON.stringify(await getTodos()));
 
-  console.log(todos)
+
   // This function should return an object with a props property with all the props we want for this page
   // keep in mind this function is run server-side
   return {
