@@ -25,7 +25,7 @@ ul {
 }
 
 .container {
-  max-width: 80rem;
+  max-width: 50rem;
   margin: 0 auto;
   padding: 0 1rem;
 }
@@ -38,7 +38,7 @@ ul {
   height: 8rem;
   display: flex;
   justify-content: flex-end;
-  border-bottom: 1px solid var(--primary-color);
+  /* border-bottom: 1px solid var(--primary-color); */
 }
 
 .navbar__list {
@@ -112,7 +112,11 @@ footer {
   padding: 3rem 0;
   text-align: center;
   font-size: 1.1rem;
-  margin-top: 7rem;
+  margin-top: 5rem;
+}
+
+.footer__logo {
+  color: var(--bg-color);
 }
 
 footer .link {
@@ -131,7 +135,7 @@ footer .link {
   display: flex;
   justify-content: center;
   gap: 1rem;
-  margin-bottom: 4rem;
+  margin: 2rem;
 }
 
 .footer__socials .link {
@@ -144,18 +148,30 @@ footer .link {
 }
 
 .footer__copyright {
-  margin-bottom: 4rem;
   color: var(--bg-color);
 }
 
 .task__list-container {
-  width: 100%;
+  width: 40%;
   margin: 0 auto;
   text-align: center;
+  border: 1px solid transparent;
+  border-radius: 5px;
 }
 
-.task__list {
-  width: 70%;
-  height: 70%;
-  margin: 20px auto;
+.task__item {
+  margin: 2rem auto;
+  color: var(--bg-color);
+  padding: 0.5rem;
+  background: var(--primary-color);
+  border-radius: 10px;
+}
+
+.task__content {
+  display: flex;
+  justify-content: space-between;
+}
+
+.task__content > * {
+  padding: 0 2rem;
 }

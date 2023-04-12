@@ -1,10 +1,14 @@
 import { getTodos } from "@/utils/actions";
+import Link from "next/link";
+import TasksList from "./tasksList";
+
+
 
 export default function Home({ todos }) {
   return (
-    <div>
-      <h1>This is the main page</h1>
-    </div>
+    <main className="container">
+      <TasksList todos={todos} />
+    </main>
   );
 }
 
