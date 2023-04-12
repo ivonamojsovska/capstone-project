@@ -1,5 +1,9 @@
 async function fetchTodos() {
-  const response = await fetch("http:localhost:3001/api/todos");
+  const response = await fetch("http:localhost:3001/api/todos", {
+    next: {
+      revalidate: 10,
+    },
+  });
   const todos = await response.json();
   return todos;
 }

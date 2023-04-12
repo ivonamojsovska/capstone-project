@@ -1,24 +1,16 @@
 [
   {
-    "id": 1,
     "title": "Laundry",
     "time": "Now",
     "place": "home"
   },
+  { "title": "Car wash", "time": "5pm", "place": "next door" },
   {
-    "id": 2,
-    "title": "Car wash",
-    "time": "5pm",
-    "place": "next door"
-  },
-  {
-    "id": 3,
     "title": "studing",
     "time": "tonight",
     "place": "home"
   },
   {
-    "id": 4,
     "title": "workout",
     "time": "8pm",
     "place": "gym"
