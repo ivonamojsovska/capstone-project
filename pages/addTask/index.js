@@ -25,8 +25,8 @@ const AddTask = () => {
 
     return (
         <>
-            <div className="add__task-container">
-                <h3>Let's add some tasks...</h3>
+            <div className="container">
+                <p>Let's add some tasks...</p>
                 <div className="add__task-form">
                     <form onSubmit={handleSubmit}>
                         <div className="form__input">
@@ -56,7 +56,10 @@ const AddTask = () => {
                                 onChange={handleChange}
                             />
                         </div>
-                        <input type="submit" value="Add Task" className="flat-button" />
+                        <div className="form-button">
+                            <input type="submit" value="Add Task" className="add-button" />
+                        </div>
+
                     </form>
                 </div>
             </div>

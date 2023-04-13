@@ -92,29 +92,35 @@ ul {
 }
 
 .add__task-form {
-  width: 100%;
-  margin-top: 20px;
+  width: 70%;
+  margin: 1.2rem auto;
 }
 
 form {
   display: flex;
   flex-direction: column;
-  margin: 0 2rem;
-  gap: 1.5rem;
+  gap: 1rem;
 }
 
 .form__input input {
   width: 100%;
   border: 0;
-  height: 50px;
+  border-radius: 0.5rem;
+  height: 2.5rem;
   font-size: 16px;
-  color: var(--primary-color);
+  color: var(--app-color);
   padding: 0 20px;
   box-sizing: border-box;
 }
 
+.form__button {
+  text-align: center;
+  padding-bottom: 2rem;
+}
+
 .add__task {
   text-align: center;
+  padding-bottom: 3rem;
 }
 
 .add-button {
@@ -126,6 +132,7 @@ form {
   text-transform: uppercase;
   text-align: center;
   border: none;
+  cursor: pointer;
 }
 
 footer {

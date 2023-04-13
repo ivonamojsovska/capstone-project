@@ -1,4 +1,4 @@
-import { getTodo } from "@/utils/actions";
+
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { useState } from "react";
@@ -8,8 +8,6 @@ import { CiEdit } from 'react-icons/ci'
 
 const TasksList = ({ todos }) => {
     const router = useRouter()
-
-
 
     const handleDelete = async (id) => {
         //console.log(todos.map(todo => todo._id))
@@ -21,6 +19,11 @@ const TasksList = ({ todos }) => {
     }
 
     const handleChecked = () => {
+
+    }
+
+    const handleEdit = () => {
+
 
     }
 
@@ -48,7 +51,8 @@ const TasksList = ({ todos }) => {
                                         <button className="icons-btn" onClick={handleChecked}><AiOutlineCheckCircle /></button>
                                     </div>
                                     <div className="task__icon">
-                                        <button className="icons-btn"><CiEdit /></button>
+                                        <Link href={`/editTask/${todo._id}`}><button className="icons-btn"><CiEdit /></button></Link>
+
                                     </div>
                                     <div className="task__icon">
                                         <button className="icons-btn" onClick={() => handleDelete(todo._id)}><BsTrash /></button>
@@ -64,7 +68,7 @@ const TasksList = ({ todos }) => {
             </div>
 
 
-        </section>
+        </section >
 
     );
 };
