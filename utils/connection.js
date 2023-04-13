@@ -20,6 +20,13 @@ export const connect = async () => {
         time: String,
     });
 
+    // OUR User Schema
+    const UserSchema = new mongoose.Schema({
+        name: String,
+        place: String,
+        time: String,
+    });
+
     // OUR TODO MODEL (we check that is doesn't already exist to avoid dev server issues)
     const Todo = mongoose.models.Todo || mongoose.model("Todo", TodoSchema);
 

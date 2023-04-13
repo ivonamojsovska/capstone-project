@@ -11,7 +11,7 @@ body {
   margin: 0;
   padding: 0;
   font-family: "Poppins", sans-serif;
-  font-size: 1.2rem;
+  font-size: 1rem;
   background: var(--bg-color);
   color: var(--primary-color);
   font-weight: 300;
@@ -29,9 +29,9 @@ ul {
   list-style: none;
 }
 
-.icons-btn {
+.icon-btn {
   font-size: 1rem;
-
+  display: flex;
   border: none;
 
   color: var(--app-color);
@@ -111,6 +111,8 @@ form {
   color: var(--app-color);
   padding: 0 20px;
   box-sizing: border-box;
+  background: var(--primary-color);
+  color: var(--app-color);
 }
 
 .form__button {
@@ -186,6 +188,7 @@ footer .link {
   margin: 1rem auto;
   color: var(--app-color);
   padding: 0.3rem 0.5rem;
+  min-height: 13rem;
 }
 
 .task__content {

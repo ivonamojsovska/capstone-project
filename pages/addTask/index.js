@@ -56,7 +56,7 @@ const AddTask = () => {
                                 onChange={handleChange}
                             />
                         </div>
-                        <div className="form-button">
+                        <div className="form__button">
                             <input type="submit" value="Add Task" className="add-button" />
                         </div>
 

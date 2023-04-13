@@ -18,17 +18,11 @@ const TasksList = ({ todos }) => {
         router.push('/')
     }
 
-    const handleChecked = () => {
+    const handleChecked = (id) => {
+        const div = document.getElementById(id)
+        div.style.opacity = 0.4
 
     }
-
-    const handleEdit = () => {
-
-
-    }
-
-
-
 
     return (
         <section className="task__list">
@@ -37,7 +31,7 @@ const TasksList = ({ todos }) => {
                 <div className="task__item">
                     {todos.map((todo) => {
                         return (
-                            <div key={todo._id} className="task__content">
+                            <div key={todo._id} id={todo._id} className="task__content">
                                 <div className="task__text">
                                     <div className="task__name">
                                         {todo.name}
@@ -48,14 +42,14 @@ const TasksList = ({ todos }) => {
                                 </div>
                                 <div className="task__icons">
                                     <div className="task__icon">
-                                        <button className="icons-btn" onClick={handleChecked}><AiOutlineCheckCircle /></button>
+                                        <button className="icon-btn" onClick={() => handleChecked(todo._id)}><AiOutlineCheckCircle /></button>
                                     </div>
                                     <div className="task__icon">
-                                        <Link href={`/editTask/${todo._id}`}><button className="icons-btn"><CiEdit /></button></Link>
+                                        <Link href={`/editTask/${todo._id}`}><button className="icon-btn"><CiEdit /></button></Link>
 
                                     </div>
                                     <div className="task__icon">
-                                        <button className="icons-btn" onClick={() => handleDelete(todo._id)}><BsTrash /></button>
+                                        <button className="icon-btn" onClick={() => handleDelete(todo._id)}><BsTrash /></button>
                                     </div>
                                 </div>
                             </div>

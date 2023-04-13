@@ -28,7 +28,7 @@ const EditTask = ({ todo }) => {
     }
 
     return (<><div className="container">
-        <p>Edit...</p>
+        <p>Edit {formState.name}</p>
         <div className="add__task-form">
             <form onSubmit={handleSubmit}>
                 <div className="form__input">
@@ -60,7 +60,7 @@ const EditTask = ({ todo }) => {
                         onChange={handleChange}
                     />
                 </div>
-                <div className="form-button">
+                <div className="form__button">
                     <input type="submit" value="Edit Task" className="add-button" />
                 </div>
 
