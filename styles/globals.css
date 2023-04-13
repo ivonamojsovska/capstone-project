@@ -1,8 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap");
 
 :root {
-  --primary-color: #815991;
-  --bg-color: #d1d3ca;
+  --primary-color: #9dd4df;
+  --bg-color: #ede7e3;
+  --app-color: #16697a;
 }
 
 html,
@@ -16,18 +17,26 @@ body {
   font-weight: 300;
 }
 
+.app {
+  max-width: 60%;
+  margin: 5rem auto;
+  border: none;
+  border-radius: 2rem;
+  background: var(--app-color);
+}
+
 ul {
   list-style: none;
 }
 
-.delete-btn {
+.icons-btn {
   font-size: 1rem;
-  font-family: inherit;
-  padding: 0.5rem 1rem;
+
   border: none;
-  border-radius: 50%;
-  color: var(--primary-color);
-  background: var(--bg-color);
+
+  color: var(--app-color);
+  background: var(--primary-color);
+  cursor: pointer;
 }
 
 .link {
@@ -35,9 +44,8 @@ ul {
 }
 
 .container {
-  max-width: 50rem;
+  max-width: 80%;
   margin: 0 auto;
-  padding: 0 1rem;
 }
 
 .center {
@@ -45,7 +53,7 @@ ul {
 }
 
 .navbar {
-  height: 8rem;
+  height: 4rem;
   display: flex;
   justify-content: flex-end;
   /* border-bottom: 1px solid var(--primary-color); */
@@ -105,17 +113,18 @@ form {
   box-sizing: border-box;
 }
 
-.flat-button {
-  width: 30%;
+.add__task {
+  text-align: center;
+}
+
+.add-button {
   font-size: 12px;
   letter-spacing: 3px;
-  padding: 10px 12px;
+  padding: 10px 20px;
   border-radius: 8px;
   background: var(--primary-color);
-  color: var(--bg-color);
   text-transform: uppercase;
   text-align: center;
-  margin-right: 10px;
   border: none;
 }
 
@@ -163,28 +172,31 @@ footer .link {
   color: var(--bg-color);
 }
 
-.task__list-container {
-  width: 40%;
-  margin: 0 auto;
-  text-align: center;
-  border: 1px solid transparent;
-  border-radius: 5px;
-}
-
 .task__item {
-  margin: 2rem auto;
-  color: var(--bg-color);
-  padding: 0.5rem;
-  background: var(--primary-color);
-  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  margin: 1rem auto;
+  color: var(--app-color);
+  padding: 0.3rem 0.5rem;
 }
 
 .task__content {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  background: var(--primary-color);
+  border-radius: 10px;
+  padding: 0 1rem;
 }
 
-.task__content > * {
-  padding: 0 2rem;
+.task__text {
+  display: flex;
+  gap: 2rem;
+}
+
+.task__icons {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
 }

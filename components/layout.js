@@ -12,12 +12,14 @@ function Layout(props) {
                 <meta name="description" content={props.description} />
                 <link rel="icon" href="/favicon.ico" />
             </Head>
-            <Navbar />
-            <Header />
-            <hr />
-            {props.children}
-            <hr />
-            <Footer />
+            <div className="app">
+                <Navbar />
+                <Header />
+
+                {props.children}
+
+            </div>
+
         </>
     );
 }

@@ -1,9 +1,15 @@
 import { getTodo } from "@/utils/actions";
 import Link from "next/link";
 import { useRouter } from "next/router";
+import { useState } from "react";
+import { AiOutlineCheckCircle } from 'react-icons/ai'
+import { BsTrash } from 'react-icons/bs'
+import { CiEdit } from 'react-icons/ci'
 
 const TasksList = ({ todos }) => {
     const router = useRouter()
+
+
 
     const handleDelete = async (id) => {
         //console.log(todos.map(todo => todo._id))
@@ -14,34 +20,47 @@ const TasksList = ({ todos }) => {
         router.push('/')
     }
 
+    const handleChecked = () => {
+
+    }
+
 
 
 
     return (
         <section className="task__list">
-            <div className="container task__list-container">
-                <h3>This is what you have...</h3>
+            <div className="task__list-container">
+                <p>This is what you have...</p>
                 <div className="task__item">
                     {todos.map((todo) => {
                         return (
                             <div key={todo._id} className="task__content">
-                                <div className="task__name">
-                                    {todo.name}
+                                <div className="task__text">
+                                    <div className="task__name">
+                                        {todo.name}
+                                    </div>
+                                    <div className="task__time">
+                                        {todo.time}
+                                    </div>
                                 </div>
-                                <div className="task__time">
-                                    {todo.time}
-                                </div>
-                                <div>
-                                    <button className="delete-btn" onClick={() => handleDelete(todo._id)}>X</button>
+                                <div className="task__icons">
+                                    <div className="task__icon">
+                                        <button className="icons-btn" onClick={handleChecked}><AiOutlineCheckCircle /></button>
+                                    </div>
+                                    <div className="task__icon">
+                                        <button className="icons-btn"><CiEdit /></button>
+                                    </div>
+                                    <div className="task__icon">
+                                        <button className="icons-btn" onClick={() => handleDelete(todo._id)}><BsTrash /></button>
+                                    </div>
                                 </div>
                             </div>
                         );
                     })}
                 </div>
-                <Link href='/addTask'>
-                    <div className="add__task-btn">
-                        <button className="flat-button">Add Task</button>
-                    </div></Link>
+                <div className="add__task">
+                    <Link href='/addTask'><button className="add-button">Add Task</button></Link>
+                </div>
             </div>
 
 
