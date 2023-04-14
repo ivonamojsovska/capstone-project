@@ -5,7 +5,7 @@ import mongoose from "mongoose";
 export const connect = async () => {
     //CREATE THE MONGOOSE CONNECTION
     const conn = await mongoose
-        .connect(process.env.MONGO_URI)
+        .connect(process.env.MONGODB_URI)
         .catch((err) => console.log(err));
 
     // connection alerts
