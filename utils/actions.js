@@ -11,6 +11,17 @@ export const getTodos = async () => {
     }
 };
 
+//get all users
+export const getUsers = async () => {
+    try {
+        const { conn, User } = await connect()
+        return await User.find({})
+
+    } catch (error) {
+        return { error: "Error in getUsers function" }
+    }
+}
+
 // function to get singleDog
 export const getTodo = async (id) => {
     try {
