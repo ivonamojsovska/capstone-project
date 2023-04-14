@@ -1,6 +1,6 @@
 import { getTodos } from "@/utils/actions";
 import Link from "next/link";
-import TasksList from "./tasksList";
+import TasksList from "../components/taskList";
 
 
 
