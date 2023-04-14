@@ -30,7 +30,7 @@ const TasksList = ({ todos }) => {
             <div className="task__list-container">
                 <p>This is what you have...</p>
                 <div className="task__item">
-                    {todos.map((todo) => {
+                    {todos ? todos.map((todo) => {
                         return (
                             <div key={todo._id} id={todo._id} className="task__content">
                                 <div className="task__text">
@@ -55,7 +55,7 @@ const TasksList = ({ todos }) => {
                                 </div>
                             </div>
                         );
-                    })}
+                    }) : <></>}
                 </div>
                 <div className="add__task">
                     <Link href='/addTask'><button className="add-button">Add Task</button></Link>
@@ -69,20 +69,20 @@ const TasksList = ({ todos }) => {
 };
 
 
-export async function getServerSideProps(ctx) {
+// export async function getServerSideProps(ctx) {
 
-    const todos = JSON.parse(JSON.stringify(await getTodos()))
+//     const todos = JSON.parse(JSON.stringify(await getTodos()))
 
 
-    // This function should return an object with a props property with all the props we want for this page
-    // keep in mind this function is run server-side
-    return {
-        props: {
+//     // This function should return an object with a props property with all the props we want for this page
+//     // keep in mind this function is run server-side
+//     return {
+//         props: {
 
-            todos
-        },
-    };
-}
+//             todos
+//         },
+//     };
+// }
 
 
 
