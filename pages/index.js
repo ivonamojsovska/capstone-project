@@ -3,31 +3,53 @@ import Link from "next/link";
 import TasksList from "../components/taskList";
 import { useRouter } from 'next/router'
 import Header from "@/components/header";
+import { useSession } from "next-auth/react";
 
 
 
 
 export default function Home({ todos }) {
 
+  const { data: session } = useSession()
 
   return (
     <>
       <Header />
-      <main className="container">
+      {session ? User({ session }) : Guest()}
+      {/* <main className="container">
         <TasksList todos={todos} />
-      </main>
+      </main> */}
     </>
 
   );
 }
 
-// This page will eventually display the most up to date list of our dogs, so it should be server-side rendered. To designate that we will page is serversideprops!
+function User({ session }) {
+  return (
+    <div className="container">
+      <h5>{session.user.fullName}</h5>
+      <div>
+        <button>Sign out</button>
+      </div>
+    </div>
+
+  )
+}
+
+function Guest() {
+  return (
+    <div className="container">
+      <h5>Guest User</h5>
+      <div>
+        <button>Sign in</button>
+      </div>
+    </div>
+  )
+}
+
+
 export async function getServerSideProps(ctx) {
   const todos = JSON.parse(JSON.stringify(await getTodos()));
-
-
-  // This function should return an object with a props property with all the props we want for this page
-  // keep in mind this function is run server-side
   return {
     props: {
       title: "Todo App - Main Page",

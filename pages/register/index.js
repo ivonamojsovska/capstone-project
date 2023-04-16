@@ -17,6 +17,7 @@ const Register = () => {
     }
 
     const handleSubmit = async (e) => {
+        e.preventDefault()
         await fetch('/api/auth/signup', {
             method: 'post',
             headers: { "Content-Type": "application/json" }
@@ -24,7 +25,7 @@ const Register = () => {
         })
         e.target.reset();
 
-        router.push('/')
+        router.push('/login')
     }
 
     return (
@@ -52,7 +53,7 @@ const Register = () => {
                     </div>
 
                     <div>
-                        <button className='sign-form__button' type="submit">Sign In</button>
+                        <button className='sign-form__button' type="submit">Sign Up</button>
                     </div>
                 </form>
                 <div>
