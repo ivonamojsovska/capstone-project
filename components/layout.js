@@ -14,7 +14,6 @@ function Layout(props) {
             </Head>
             <div className="app">
                 <Navbar />
-                <Header />
 
                 {props.children}
 

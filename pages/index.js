@@ -1,14 +1,26 @@
 import { getTodos } from "@/utils/actions";
 import Link from "next/link";
 import TasksList from "../components/taskList";
+import { useRouter } from 'next/router'
+import Header from "@/components/header";
+
 
 
 
 export default function Home({ todos }) {
+  const router = useRouter();
+  const data = router.query
+  const activeUser = { ...data }
+  console.log(activeUser)
+
   return (
-    <main className="container">
-      <TasksList todos={todos} />
-    </main>
+    <>
+      <Header data={activeUser} />
+      <main className="container">
+        <TasksList todos={todos} />
+      </main>
+    </>
+
   );
 }
 

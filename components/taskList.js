@@ -11,6 +11,7 @@ const TasksList = ({ todos }) => {
     const router = useRouter()
 
     const handleDelete = async (id) => {
+
         //console.log(todos.map(todo => todo._id))
         // make delete request when button is clicked
         await fetch("/api/todos/" + id, {

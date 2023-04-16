@@ -1,18 +1,18 @@
-import { createContext, use, useState } from "react";
+import { createContext, useState } from "react";
 
-export const Todos_data = createContext(null);
-export const CurrentUser = createContext(null)
+export const Todos_data = createContext();
+//export const CurrentUser = createContext()
 
 function Context({ children }) {
-    const [todosArr, setTodosArr] = useState();
-    const [currentUser, setCurrentUser] = useState({})
+    let [todosArr, setTodosArr] = useState([]);
+    // let [currentUserContext, setCurrentUserContext] = useState({})
 
     return (
-        <CurrentUser.Provider value={(currentUser, setCurrentUser)}>
-            <Todos_data.Provider value={(todosArr, setTodosArr)}>
-                {children}
-            </Todos_data.Provider>
-        </CurrentUser.Provider>
+        // <CurrentUser.Provider value={(currentUserContext, setCurrentUserContext)}>
+        <Todos_data.Provider value={(todosArr, setTodosArr)}>
+            {children}
+        </Todos_data.Provider>
+        // </CurrentUser.Provider>
     );
 }
 
