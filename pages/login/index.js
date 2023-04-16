@@ -27,14 +27,15 @@ const Login = ({ users }) => {
     const handleSubmit = async (e) => {
         e.preventDefault()
         const status = await signIn('credentials', {
-            ...loginUser,
             redirect: false,
-            // email: loginUser.email,
-            // password: loginUser.password,
-            // callbackUrl: '/login',
-        }).then(response => console.log(response)).catch(err => console.error(err))
+            email: loginUser.email,
+            password: loginUser.password,
+            callbackUrl: '/login',
+        })
 
-        //console.log(status)
+        console.log(status)
+        if (status.ok) router.push('/')
+
         // users.forEach(async (user) => {
         //     if ((loginUser.email === user.email) && (await bcrypt.compare(loginUser.password, user.password))) {
         //         setCurrentUser(user)
