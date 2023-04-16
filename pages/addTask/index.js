@@ -25,7 +25,7 @@ const AddTask = () => {
 
     return (
         <>
-            <div className="container">
+            <div className="container add__task-page">
                 <p>Let's add some tasks...</p>
                 <div className="add__task-form">
                     <form onSubmit={handleSubmit}>

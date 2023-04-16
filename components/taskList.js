@@ -11,9 +11,6 @@ const TasksList = ({ todos }) => {
     const router = useRouter()
 
     const handleDelete = async (id) => {
-
-        //console.log(todos.map(todo => todo._id))
-        // make delete request when button is clicked
         await fetch("/api/todos/" + id, {
             method: "delete",
         });
@@ -23,7 +20,6 @@ const TasksList = ({ todos }) => {
     const handleChecked = (id) => {
         const div = document.getElementById(id)
         div.style.opacity = 0.4
-
     }
 
     return (

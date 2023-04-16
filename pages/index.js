@@ -15,10 +15,9 @@ export default function Home({ todos }) {
   return (
     <>
       <Header />
-      {session ? User({ session }) : Guest()}
-      {/* <main className="container">
+      <main className="container">
         <TasksList todos={todos} />
-      </main> */}
+      </main>
     </>
 
   );

@@ -27,8 +27,8 @@ const EditTask = ({ todo }) => {
 
     }
 
-    return (<><div className="container">
-        <p>Edit {formState.name}</p>
+    return (<><div className="container edit__task-page" >
+        <p>Edit Task: {formState.name}</p>
         <div className="add__task-form">
             <form onSubmit={handleSubmit}>
                 <div className="form__input">

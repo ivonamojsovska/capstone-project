@@ -1,7 +1,5 @@
 import Head from "next/head";
-import Footer from "./footer";
-import Navbar from "./navbar";
-import Header from "./header";
+
 
 function Layout(props) {
     return (
@@ -13,7 +11,6 @@ function Layout(props) {
                 <link rel="icon" href="/favicon.ico" />
             </Head>
             <div className="app">
-                <Navbar />
                 {props.children}
 
             </div>

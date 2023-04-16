@@ -19,6 +19,7 @@ body {
 
 .app {
   max-width: 60%;
+  height: 30rem;
   margin: 5rem auto;
   border: none;
   border-radius: 2rem;
@@ -57,24 +58,6 @@ a {
   text-align: center;
 }
 
-.navbar {
-  height: 4rem;
-  display: flex;
-  justify-content: flex-end;
-  /* border-bottom: 1px solid var(--primary-color); */
-}
-
-.navbar__list {
-  list-style: none;
-  padding: 0 2rem;
-  display: flex;
-  align-items: flex-end;
-  gap: 3rem;
-}
-
-.navbar__link {
-  text-decoration: none;
-}
 .header h1 {
   padding: 2rem 0;
 }
@@ -97,8 +80,7 @@ a {
 }
 
 .add__task-form {
-  width: 70%;
-  margin: 1.2rem auto;
+  margin-top: 1.3rem;
 }
 
 form {
@@ -129,7 +111,6 @@ form {
 }
 
 .form__input input {
-  width: 100%;
   border: 0;
   border-radius: 0.5rem;
   height: 2.5rem;
@@ -147,12 +128,10 @@ form input:focus + * {
 
 .form__button {
   text-align: center;
-  padding-bottom: 2rem;
 }
 
 .add__task {
   text-align: center;
-  padding-bottom: 3rem;
 }
 
 .add-button {
@@ -165,6 +144,7 @@ form input:focus + * {
   text-align: center;
   border: none;
   cursor: pointer;
+  color: var(--app-color);
 }
 
 footer {
@@ -242,11 +222,9 @@ footer .link {
 }
 
 .signup__page {
-  position: absolute;
-  top: 0;
-  width: 60%;
   margin: 0 auto;
   height: 30rem;
+  border-radius: 10px;
   background: var(--app-color);
   display: flex;
   align-items: center;
@@ -264,4 +242,12 @@ footer .link {
   border: none;
   border-radius: 5px;
   cursor: pointer;
+}
+.add__task-page,
+.edit__task-page {
+  height: 30rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }

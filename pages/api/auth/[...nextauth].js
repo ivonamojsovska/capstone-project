@@ -9,15 +9,19 @@ import { compare } from 'bcrypt'
 
 export default NextAuth(
     {
+        pages: {
+            signIn: "/login"
+        },
         providers: [
             CredentialsProvider({
                 name: "Credentials",
                 async autorize(credentials, req) {
 
-                    connect().catch(error => { error: "Connection Failed..." })
+                    connect().catch(error => error = "Connection Failed...")
 
                     const result = await User.findOne({ email: credentials.email })
                     console.log(result)
+
                     if (!result) {
                         throw new Error("No user found. Please Sign up.")
                     }
