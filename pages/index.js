@@ -8,14 +8,11 @@ import Header from "@/components/header";
 
 
 export default function Home({ todos }) {
-  const router = useRouter();
-  const data = router.query
-  const activeUser = { ...data }
-  console.log(activeUser)
+
 
   return (
     <>
-      <Header data={activeUser} />
+      <Header />
       <main className="container">
         <TasksList todos={todos} />
       </main>

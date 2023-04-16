@@ -8,11 +8,11 @@ const caveat = Caveat({
     subsets: ["latin"],
 });
 
-function Header({ data }) {
+function Header() {
     return (
         <header className="header">
             <div className="container">
-                <h1 className={caveat.className}>What's up, {data.fullName}</h1>
+                <h1 className={caveat.className}>What's up, name?</h1>
             </div>
         </header>
     );

@@ -3,6 +3,7 @@ import { useRouter } from 'next/router'
 import { getUsers } from '@/utils/actions'
 import bcrypt from 'bcryptjs'
 import Link from 'next/link'
+import { HiAtSymbol, HiFingerPrint } from 'react-icons/hi'
 
 
 
@@ -11,6 +12,8 @@ const Login = ({ users }) => {
     const router = useRouter()
     const [loginUser, setLoginUser] = useState({ email: '', password: '' })
     const [currentUser, setCurrentUser] = useState(null)
+
+    const [show, setShow] = useState(false)
 
 
 
@@ -42,18 +45,29 @@ const Login = ({ users }) => {
             </> : <>
                 <div className="signup__page">
                     <div className="container signup__container">
-                        <h3>Login</h3>
+                        <h3>Sign in</h3>
                         <form onSubmit={handleSubmit}>
-                            <div>
+                            <div className='sign-form__input'>
                                 <input type="email" name="email" required placeholder="Email" onChange={handleChange} />
+                                <span>
+                                    <HiAtSymbol />
+                                </span>
                             </div>
-                            <div>
-                                <input type="password" name="password" required placeholder="Password" onChange={handleChange} />
+                            <div className='sign-form__input'>
+                                <input type={`${show ? "text" : "password"}`} name="password" required placeholder="Password" onChange={handleChange} />
+                                <span onClick={() => setShow(!show)
+                                }>
+                                    <HiFingerPrint />
+                                </span>
                             </div>
-                            <div>
-                                <button className='signup__button' type="submit">Login</button>
+                            <div className=''>
+                                <button className='sign-form__button' type="submit">Login</button>
                             </div>
                         </form>
+                        <div>
+                            <p>Dont have an account yet? <Link href='/register'>Sign Up</Link></p>
+                        </div>
+
                     </div>
                 </div>
             </>
