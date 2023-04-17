@@ -30,7 +30,7 @@ const Login = ({ users }) => {
             redirect: false,
             email: loginUser.email,
             password: loginUser.password,
-            callbackUrl: '/login',
+            callbackUrl: '/',
         })
 
         console.log(status)

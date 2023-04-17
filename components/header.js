@@ -1,7 +1,5 @@
 import { Caveat } from "next/font/google";
-import Login from "@/pages/login";
-import { useContext } from "react";
-import { CurrentUser } from "@/context/context";
+import Link from "next/link";
 
 const caveat = Caveat({
     weight: ["700"],
@@ -10,9 +8,14 @@ const caveat = Caveat({
 
 function Header() {
     return (
-        <header className="header">
-            <div className="container">
-                <h1 className={caveat.className}>What's up, name?</h1>
+        <header className="container">
+            <div className="header">
+                <div className="header__text">
+                    <h1 className={caveat.className}>Hey, there...!</h1>
+                </div>
+                <div className="sign__out-btn">
+                    <Link href='/login'><button className="sign-form__button">Log Out</button></Link>
+                </div>
             </div>
         </header>
     );

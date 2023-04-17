@@ -25,7 +25,7 @@ const TasksList = ({ todos }) => {
     return (
         <section className="task__list">
             <div className="task__list-container">
-                <p>This is what you have...</p>
+                <p>Things to be done...</p>
                 <div className="task__item">
                     {todos ? todos.map((todo) => {
                         return (
